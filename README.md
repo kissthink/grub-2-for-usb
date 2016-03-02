@@ -1,2 +1,3 @@
 # Grub-2-for-usb
-Xây dựng trên nền tảng của grub-2
+Build on grub-2.
+### Copy right (c) [Long Nhat Nguyen](https://twitter.com/torn4dom4n)
