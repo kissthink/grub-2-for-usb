@@ -1,5 +1,4 @@
 # Grub-2-for-usb
-Build on grub-2.
 # Install
 ## Step 1:
 Download [grub-2-for-usb](https://github.com/torn4dom4n/archive/master)!
