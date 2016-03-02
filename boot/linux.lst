@@ -1,0 +1,26 @@
+gfxmenu /gfxboot.cfg
+configfile (bd)/boot/linux.lst
+
+iftitle [if exist /iso/ubuntu.iso] Ubuntu LiveCD
+	set isoname=/iso/ubuntu.iso
+	find --set-root %isoname%
+	map  %isoname% (0xff) || map --mem %isoname% (0xff)
+	map --hook
+	root (0xff)
+	kernel /casper/vmlinuz.efi boot=casper iso-scan/filename=%isoname% quiet splash
+	initrd /casper/initrd.lz
+	boot
+
+iftitle Gparted Live CD i486
+    set isoname=/iso/gparted.iso
+	find --set-root %isoname%
+    map  %isoname% (0xff) || map --mem %isoname% (0xff)
+    map --hook
+    root (0xff)
+    kernel /live/vmlinuz  boot=live config union=aufs noswap noprompt vga=788 ip=frommedia findiso=/iso/gparted-live-i486.iso toram=filesystem.squashfs
+    initrd /live/initrd.img
+
+title <--- Back Main Menu
+	find --set-root  /menu.lst
+	configfile /menu.lst
+

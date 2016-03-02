@@ -1,0 +1,8 @@
+!BAT
+partnew (hd0,2) 0x0 %isoname%
+map %isoname% (0xff) > nul || map --mem %isoname% (0xff)
+map --hook
+root (0xff) || rootnoverify (0xff)
+chainloader (0xff) || chainloader --force (0xff)
+errorcheck off 
+boot

@@ -1,0 +1,8 @@
+!BAT
+find --set-root --ignore-floppies %isoname%
+map  %isoname% (fd0) || map --mem %isoname% (fd0)
+map --hook
+chainloader (fd0)+1
+map (hd1) (hd0)
+map --hook
+rootnoverify (fd0)

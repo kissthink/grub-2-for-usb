@@ -1,0 +1,42 @@
+timeout 15
+default 0
+gfxmenu /gfxboot.cfg
+configfile (bd)/menu.lst
+
+title 1. Boot WinPE
+find --set-root --ignore-floppies --ignore-cd /boot/bootpe
+chainloader /boot/bootpe
+
+title 2. Boot Dos Tool
+find --set-root --ignore-floppies --ignore-cd /boot/tool.lst
+configfile /boot/tool.lst
+
+title 3. Boot Antivirus Rescue
+find --set-root --ignore-floppies --ignore-cd /boot/antivirus.lst
+configfile /boot/antivirus.lst
+
+title 4. Boot Linux ISO
+find --set-root --ignore-floppies --ignore-cd /boot/linux.lst
+configfile /boot/linux.lst
+
+title 5. Boot HDD Windows 7/8/10
+find --set-root --ignore-floppies --ignore-cd /bootmgr || rootnoverify (hd0) && chainloader +1 && boot
+map () (hd0) && map (hd0) () && map --rehook
+find --set-root --devices=h /bootmgr
+chainloader /bootmgr
+
+title 6. Boot HDD Windows XP
+find --set-root --ignore-floppies --ignore-cd /ntldr || rootnoverify (hd0) && chainloader +1 && boot
+map () (hd0) && map (hd0) () && map --rehook
+find --set-root --ignore-floppies --ignore-cd /ntldr
+chainloader /ntldr
+
+iftitle [ find --set-root /g2ldr ] 7. Boot Grub2
+find --set-root /g2ldr
+kernel /g2ldr
+
+title 8. Reboot
+reboot
+
+title 9. Power Off
+halt -no-apm

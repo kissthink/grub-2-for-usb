@@ -1,0 +1,31 @@
+gfxmenu /gfxboot.cfg
+configfile (bd)/boot/tool.lst
+
+iftitle [if exist /iso/ati16.iso] Acronis True Image 2016
+	set isoname=/iso/ati16.iso && call /boot/loadrescue.g4b
+
+iftitle [if exist /iso/pwh.iso] MiniTool Partition Wizard
+	set isoname=/iso/pwh.iso && call /boot/loadiso.g4b
+
+iftitle [if exist /iso/ghost115.iso] Norton Ghost 11.5
+	set isoname=/iso/ghost115.iso && call /boot/loadiso.g4b
+
+iftitle [if exist /iso/partguru.ima] Partition Guru Pro
+	set isoname=/iso/partguru.ima && call /boot/loadfloppy.g4b
+
+iftitle [if exist /iso/ActivePWC_6.img] Active Password Changer 6
+	set isoname=/iso/ActivePWC_6.img && call /boot/loadfloppy.g4b
+
+iftitle [if exist /iso/konboot.img] Konboot
+	set isoname=/iso/konboot.img && call /boot/loadfloppy.g4b
+
+iftitle [if exist /iso/hddreg.ima] HDD Regenerator
+	set isoname=/iso/hddreg.ima && call /boot/loadfloppy.g4b
+
+iftitle [if exist /boot/plpbt.bin] PLoP Boot Manager
+	find --set-root /boot/plpbt.bin
+	kernel /boot/plpbt.bin
+
+title <--- Back Main Menu
+	find --set-root /menu.lst
+	configfile /menu.lst

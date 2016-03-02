@@ -1,0 +1,24 @@
+gfxmenu /gfxboot.cfg
+configfile (bd)/boot/antivirus.lst
+
+iftitle [if exist /iso/bitdefender.iso] Bitdefender Rescue ISO
+	set isoname=/iso/bitdefender.iso && call /boot/loadrescue.g4b
+
+iftitle [if exist /rescue/rescue.iso] Kaspersky Rescue 10
+	set isoname=rescue/rescue.iso && call /boot/loadrescue.g4b
+
+iftitle [if exist /iso/avg.iso] AVG Rescue CD
+	set isoname=/iso/avg.iso && call /boot/loadrescue.g4b
+
+iftitle [if exist /iso/avira.iso] Avira Rescue System
+	set isoname=/iso/avira.iso && call /boot/loadrescue.g4b
+
+iftitle [if exist /iso/drweb.iso] Dr.Web® LiveDisk
+	set isoname=/iso/drweb.iso && call /boot/loadrescue.g4b
+
+iftitle [if exist /iso/eset.iso] ESET SysRescue Live
+	set isoname=/iso/eset.iso  && call /boot/loadrescue.g4b
+
+title <--- Back Main Menu
+	find --set-root /menu.lst
+	configfile /menu.lst

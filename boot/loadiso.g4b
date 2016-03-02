@@ -1,0 +1,6 @@
+!BAT
+find --set-root %isoname%
+map  %isoname% (hd32) || map --mem %isoname% (hd32)
+map --hook
+root (hd32)
+chainloader (hd32)
