@@ -7,6 +7,7 @@ Extra and copy all files to usb. Now you can restart computer and use!
 # Test
 Asus Intel Core i3.
 # Updates
-v 1.0.0
+##v 1.0.0
+* Initial
 ### Copy right (c) [Long Nhat Nguyen](https://twitter.com/torn4dom4n)
 
