@@ -1,5 +1,4 @@
-# Grub-2-for-usb
-[![Build Status](https://travis-ci.org/torn4dom4n/grub-2-for-usb.svg?branch=master)](https://travis-ci.org/torn4dom4n/grub-2-for-usb)
+# grub-2-for-usb [![Build Status](https://travis-ci.org/torn4dom4n/grub-2-for-usb.svg?branch=master)](https://travis-ci.org/torn4dom4n/grub-2-for-usb)
 # Install
 
 ##Step 1:
